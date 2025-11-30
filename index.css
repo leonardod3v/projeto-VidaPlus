@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+}
+
+
+header {
+    width: 100%;
+    height: 160px;
+    padding: 1rem;
+    background-color: #0eadad;
+    color: white;
+}
+
+header #titles {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+nav ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li a:hover {
+    color: rgb(255, 255, 109);
+    font-weight: bold;
+}
+
+main .bg-image {
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+main .bg-image img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+main h2 {
+    margin-bottom: 1.25rem;
+    color: rgb(0, 61, 61);
+}
+
+main .info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 3rem;
+
+}
+
+main .info-card {
+    height: 300px;
+    width: 350px;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+main .login {
+    display: flex;
+    background: #0eadad;
+    padding: 2rem;
+}
+
+main .login-card {
+    background: rgb(255, 255, 255);
+    border: 1.25px solid rgb(0, 0, 0);
+    border-radius: 8px;
+    height: 20rem;
+    width: 20rem;
+    margin: 0 auto;
+    padding: 1.25rem;
+    text-align: center;
+    line-height: 150%;
+}
+
+main .login-card a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main .login-card button {
+
+    display: block;
+    width: 90%;
+    margin: 1rem auto;
+    padding: 0.5rem;
+    border: 1px solid;
+    border-radius: 10px;
+    background: #0eadad;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+@media screen and (min-width: 900px) {
+    
+}
