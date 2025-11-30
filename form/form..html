@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro e Login</title>
+  <link rel="stylesheet" href="form.css">
+</head>
+<body>
+  <header>
+        <div id="titles">
+            <h1>VidaPlus</h1>
+            <h2>Sistema de Gestão Hospitalar e Serviços de Saúde</h2>
+        </div>
+  </header>
+
+  <main>
+    <h2>Cadastro</h2>
+    <p>Ainda não tem cadastro? Faça agora o seu!</p>
+    <form id="formCadastro">
+      <input type="text" id="nome" placeholder="Nome completo" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="text" id="cpf" placeholder="CPF" required>
+      <input type="password" id="senha" placeholder="Senha" required>
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <h2>Login</h2>
+    <p>Já é cliente? Faça seu login.</p>
+    <form id="formLogin">
+      <input type="text" id="loginCPF" placeholder="CPF" required>
+      <input type="password" id="loginSenha" placeholder="Senha" required>
+      <button type="submit">Entrar</button>
+    </form>
+  </main>
+
+  <script src="form.js"></script>
+</body>
+</html>
