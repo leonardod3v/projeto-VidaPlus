@@ -12,13 +12,11 @@ function checkAdminAccess() {
     //Se o usuário admin e senha digitados forem iguais aos do objeto admin, exibe "Acesso concedido!", senão exibe "Acesso negado!"
     if (admin.user === adminArea.value && admin.password === passwordArea.value) {
         alert("Acesso concedido!");
+        adminArea.value = "";
+        passwordArea.value = "";
         window.location.href = "admin-dashboard.html";
     }
     else {
         alert("Acesso negado!");
     }
 }
-
-
-
-checkAdminAccess()

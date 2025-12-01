@@ -1,37 +1,52 @@
-localStorage.getItem("professionalUser", JSON.stringify(professionalUser));
-const main = document.querySelector("main");
+// A depender do médico que logou, criar uma tabela de 3 pacientes fictícios para ele
+const patientsContainer = document.querySelector("#patients");
+const storedUsers = JSON.parse(localStorage.getItem("professionalUser")) || [];
+const btn = document.querySelector("button");
 
-if (professionalUser.code = 56902 && professionalUser.password === "cardio2024") {
-    main.innerHTML = `
-         <table>
-            <thead>
-                <tr>
-                    <th>Nome do Paciente</th>
-                    <th>Data da Consulta</th>
-                    <th>Especialidade</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>João Silva</td>
-                    <td>2024-07-10</td>
-                    <td>Cardiologia</td>
-                    <td>Confirmada</td>
-                </tr>
-                <tr>
-                    <td>Maria Oliveira</td>
-                    <td>2024-07-12</td>
-                    <td>Pediatria</td>
-                    <td>Pendente</td>
-                </tr>
-                <tr>
-                    <td>Carlos Souza</td>
-                    <td>2024-07-15</td>
-                    <td>Ortopedia</td>
-                    <td>Cancelada</td>
-                </tr>
-            </tbody>
-         </table>
+btn.addEventListener("click", function() {
+    // Limpar dados de login e voltar para a página inicial
+    window.location.href = "../index.html";
+    alert("Você saiu da área médica.");
+});
+
+if (storedUsers.find(user => user.code == 56902)) { 
+    patientsContainer.innerHTML = `
+        <h3>Seus Pacientes:</h3>
+        <ul>
+            <li>Paciente 1: João Silva - Consulta em 10/10/2024</li>
+            <li>Paciente 2: Maria Oliveira - Consulta em 15/10/2024</li>
+            <li>Paciente 3: Carlos Pereira - Consulta em 20/10/2024</li>
+        </ul>
+    `;
+}
+
+else if (storedUsers.find(user => user.code === 78345)) {
+    patientsContainer.innerHTML = `
+        <h3>Seus Pacientes:</h3>
+        <ul>
+            <li>Paciente 1: Ana Souza - Consulta em 12/10/2024</li>
+            <li>Paciente 2: Pedro Lima - Consulta em 18/10/2024</li>
+            <li>Paciente 3: Lucas Fernandes - Consulta em 22/10/2024</li>
+        </ul>
+    `;
+}
+
+else if (storedUsers.find(user => user.code === 34567)) {
+    patientsContainer.innerHTML = `
+        <h3>Seus Pacientes:</h3>
+        <ul>
+            <li>Paciente 1: Beatriz Gomes - Consulta em 11/10/2024</li>
+            <li>Paciente 2: Felipe Rocha - Consulta em 16/10/2024</li>
+            <li>Paciente 3: Gabriela Martins - Consulta em 21/10/2024</li>
+        </ul>
+    `;
+} else if (storedUsers.find(user => user.code === 89012)) {
+    patientsContainer.innerHTML = `
+        <h3>Seus Pacientes:</h3>
+        <ul>
+            <li>Paciente 1: Sofia Alves - Consulta em 13/10/2024</li>
+            <li>Paciente 2: Matheus Cardoso - Consulta em 17/10/2024</li>
+            <li>Paciente 3: Laura Dias - Consulta em 23/10/2024</li>
+        </ul>
     `;
 }
