@@ -20,6 +20,8 @@ document.getElementById("formCadastro").addEventListener("submit", function (e) 
   localStorage.setItem("clienteCadastro", JSON.stringify(cliente));
 
   alert("Cadastro realizado com sucesso!");
+  // Limpa o formulário
+  document.getElementById("formCadastro").reset();
 });
 
 
