@@ -51,75 +51,65 @@ loginButton.addEventListener("click", function (event) {
   if (authenticatedUser) {
     alert(`Bem-vindo, ${authenticatedUser.name}!`);
     // Redirecionar para a área médica
+    function redirectToMedicArea() {
+    medicalForm.remove();
+    document.createElement("button")
+    
+    //Mostrar o(a) médico(a) logado(a)
+    const h3 = document.querySelector("h3")
+    
+
+    //De acordo com o médico que logar, exibir a tabela de acordo (tabelas escondidas e serão exibidas se atenderem à lógica)
+    const childOne = patients.children[0]
+    const childTwo = patients.children[1]
+    const childThree = patients.children[2]
+    const childFour = patients.children[3]
+    
+    
+    if (authenticatedUser == storedUsers[0] ) {
+        h3.innerHTML = `
+        <h3>Bem-vindo(a) ${storedUsers[0].name}</h3>
+        `
+        childOne.style.display = 'block'
+    }
+
+    if (authenticatedUser == storedUsers[1] ) {
+      h3.innerHTML = `
+        <h3>Bem-vindo(a) ${storedUsers[1].name}</h3>
+        `
+        childTwo.style.display = 'block'
+    }
+    if (authenticatedUser == storedUsers[2] ) {
+        h3.innerHTML = `
+          <h3>Bem-vindo(a) ${storedUsers[2].name}</h3>
+        `
+        childThree.style.display = 'block'
+    }
+
+    if (authenticatedUser == storedUsers[3] ) {
+        h3.innerHTML = `
+        <h3>Bem-vindo(a) ${storedUsers[3].name}</h3>
+        `
+        childFour.style.display = 'block'
+    }
+  }
+      
+  redirectToMedicArea();
+
   } else {
     alert("Código ou senha incorretos. Tente novamente.");
   }
-
-  function redirectToMedicArea() {
-    medicalForm.remove();
-    document.createElement("button")
-    //Criar uma tabela com pacientes diferentes, de acordo com o médico que fizer o login
-    //Se o médico for cardiologista, criar tabela com 3 pacientes e seus dados
-    if (authenticatedUser === storedUsers[0]) {
-      patients.innerHTML = `
-        <table>
-        <thead>
-            <tr>
-            <th>Nome</th>
-            <th>Idade</th>
-            <th>Condição</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-            <td>Marcos Avelar</td>
-            <td>54</td>
-            <td>Arritmia Supraventricular</td>
-            </tr>
-            <tr>
-            <td>Helena Duarte</td>
-            <td>62</td>
-            <td>Insuficiência Cardíaca Congestiva</td>
-            </tr>
-            <tr>
-            <td>Rogério Mendonça</td>
-            <td>47</td>
-            <td>Angina Estável</td>
-            </tr>
-        </tbody>
-        </table>
-
-            `;
-    } else if (authenticatedUser === storedUsers[1]) {
-      patients.innerHTML = `
-        <table>
-        <thead>
-            <tr>
-            <th>Nome</th>
-            <th>Idade</th>
-            <th>Condição</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-            <td>Leonidas Trajano Torres</td>
-            <td>59</td>
-            <td>Lesão por estresse</td>
-            </tr>
-            <tr>
-            <td>Rafaela Jardim Silveira</td>
-            <td>21</td>
-            <td>Fratura do pé esquerdo</td>
-            </tr>
-            <tr>
-            <td>Jean Nogueira Freire</td>
-            <td>27</td>
-            <td>Bursite</td>
-            </tr>
-        </tbody>
-        </table>
-      `;
-    }
-  }
-  redirectToMedicArea();
+  
 });
+
+  //Adicionar paciente para consulta
+  //Código teste
+  //Verificar se é possível adicionar valores aos inputs e deixar os mesmos em formato de consulta agendada
+  /* const h4 = document.querySelector("h4")
+  h4.style.display = 'block'
+  
+  const btn = document.querySelector("#btn")
+  btn.addEventListener("click", () => {
+      const p = document.createElement("input")
+      document.getElementById("appointments").appendChild(p)   
+  }) */

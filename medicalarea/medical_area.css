@@ -32,8 +32,18 @@ input[type="number"], input[type="password"] {
     padding: 0.75rem;
 }
 
+/* Mantem as tabelas escondidas*/
+
+div#patients {
+    width: 25rem;
+}
+
+table, h4 {
+    display: none;
+}
+
 table {
-    width: 100%;
+    width: fit-content;
     border-collapse: collapse;
     margin: 20px 0;
     font-family: Arial, sans-serif;
@@ -61,4 +71,12 @@ table th {
 
 table td {
     font-size: 14px;
+}
+
+button {
+    margin: 1rem 0;
+}
+
+button#btn {
+    display: none;
 }
