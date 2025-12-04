@@ -38,7 +38,7 @@ div#patients {
     width: 25rem;
 }
 
-table, h4, #form-box, #appointments {
+table, h4, #data-box, #appointments {
     display: none;
 }
 

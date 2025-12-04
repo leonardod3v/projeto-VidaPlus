@@ -39,6 +39,7 @@ const loginButton = document.querySelector("#login-button");
 const patients = document.querySelector("#patients");
 const btn = document.querySelector("#btn")
 const h4 = document.querySelector("h4")
+const formBox = document.querySelector("#data-box")
 const infos = document.querySelector("#infos")
 
 loginButton.addEventListener("click", function (event) {
@@ -104,6 +105,7 @@ loginButton.addEventListener("click", function (event) {
     }
   }
   const appointments = document.querySelector("#appointments")
+   formBox.style.display = 'block'
    appointments.style.display = 'block' 
    h4.style.display = 'block'
    btn.style.display = 'block'
@@ -117,11 +119,29 @@ loginButton.addEventListener("click", function (event) {
 });
 
 //Adicionar paciente para consulta
-const formBox = document.querySelector("#data-box")
 const deleteInfo = document.querySelector("#delete-info")
 //Verificar se é possível adicionar valores aos inputs e deixar os mesmos em formato de consulta agendada
 btn.addEventListener("click", () => {
-      formBox.style.display = 'grid'
+      
+    //Função para salvar o valor dos dados do input
+    const inputName = document.querySelector("#input-name").value
+    const inputSituation = document.querySelector("#input-situation").value
+    const inputVisit = document.querySelector("#input-visit").value
+  
+    infos.innerHTML = `
+      <p>${inputName}</p>
+      <p>${inputSituation}</p>
+      <p>${inputVisit}</p>
+    `
+
+    if (inputName == '' || inputSituation == '' || inputVisit == '') {
+        alert("Preencha os dados!")
+    }
+    else {
+      alert("Agendamento salvo!")
+    }
+
+  /* formBox.style.display = 'grid'
       const patientName = prompt("Informe o nome do paciente: ")
       const day = prompt("Informe o dia para agendamento: ")
       const hour = prompt("Informe o horário: ")
@@ -133,18 +153,12 @@ btn.addEventListener("click", () => {
           <li>${day}</li>
           <li>${hour}h</li>
         </ul>
-      `
+      ` */
   })
   //VERIFICAR A LÓGICA NOVAMENTE, NÃO FUNCIONANDO 100% 
   deleteInfo.addEventListener('click', () => {
-    if (infos.textContent === 'Nenhum agendamento!') {
-      alert("Sem agendamentos para deletar")
-    }
+      infos.innerHTML = 'Nenhum agendamento!'
 
-    if (infos.textContent != 'Nenhum agendamento!') {
-      infos.innerHTML='Nenhum agendamento!'
-      alert('Agendamento excluído!')
-    }
   })
 
  
