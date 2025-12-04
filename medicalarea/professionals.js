@@ -27,8 +27,8 @@ let professionalUser = [
     name: "Dr. Jorge Ferreira",
     profession: "Pediatra",
     contact: "(41) 93456-7890",
-    code: 89012,
-    password: "pediatria0254",
+    code: 12345,
+    password: "pediatria",
   },
 ];
 
@@ -37,6 +37,9 @@ localStorage.setItem("professionalUser", JSON.stringify(professionalUser));
 const medicalForm = document.querySelector("#medical-form");
 const loginButton = document.querySelector("#login-button");
 const patients = document.querySelector("#patients");
+const btn = document.querySelector("#btn")
+const h4 = document.querySelector("h4")
+const infos = document.querySelector("#infos")
 
 loginButton.addEventListener("click", function (event) {
   event.preventDefault();
@@ -71,6 +74,12 @@ loginButton.addEventListener("click", function (event) {
         <h3>Bem-vindo(a) ${storedUsers[0].name}</h3>
         `
         childOne.style.display = 'block'
+        infos.innerHTML = `
+          <p>Paciente: Leonidas Figueiredo Lemos</p>
+          <p>Idade: 65</p>
+          <p>Situação: Taquicardia frequente</p>
+          <p>Data da consulta: 15/12/2025</p>
+        `
     }
 
     if (authenticatedUser == storedUsers[1] ) {
@@ -91,8 +100,13 @@ loginButton.addEventListener("click", function (event) {
         <h3>Bem-vindo(a) ${storedUsers[3].name}</h3>
         `
         childFour.style.display = 'block'
+        
     }
   }
+  const appointments = document.querySelector("#appointments")
+   appointments.style.display = 'block' 
+   h4.style.display = 'block'
+   btn.style.display = 'block'
       
   redirectToMedicArea();
 
@@ -102,14 +116,42 @@ loginButton.addEventListener("click", function (event) {
   
 });
 
-  //Adicionar paciente para consulta
-  //Código teste
-  //Verificar se é possível adicionar valores aos inputs e deixar os mesmos em formato de consulta agendada
-  /* const h4 = document.querySelector("h4")
-  h4.style.display = 'block'
-  
-  const btn = document.querySelector("#btn")
-  btn.addEventListener("click", () => {
-      const p = document.createElement("input")
-      document.getElementById("appointments").appendChild(p)   
-  }) */
+//Adicionar paciente para consulta
+const formBox = document.querySelector("#data-box")
+const deleteInfo = document.querySelector("#delete-info")
+//Verificar se é possível adicionar valores aos inputs e deixar os mesmos em formato de consulta agendada
+btn.addEventListener("click", () => {
+      formBox.style.display = 'grid'
+      const patientName = prompt("Informe o nome do paciente: ")
+      const day = prompt("Informe o dia para agendamento: ")
+      const hour = prompt("Informe o horário: ")
+      alert("Agendamento concluído!")
+
+      infos.innerHTML = `
+        <ul type="none">
+          <li>${patientName}</li>
+          <li>${day}</li>
+          <li>${hour}h</li>
+        </ul>
+      `
+  })
+  //VERIFICAR A LÓGICA NOVAMENTE, NÃO FUNCIONANDO 100% 
+  deleteInfo.addEventListener('click', () => {
+    if (infos.textContent === 'Nenhum agendamento!') {
+      alert("Sem agendamentos para deletar")
+    }
+
+    if (infos.textContent != 'Nenhum agendamento!') {
+      infos.innerHTML='Nenhum agendamento!'
+      alert('Agendamento excluído!')
+    }
+  })
+
+ 
+ //Criar um input para colocar as informações (?)
+ //Checar to-do list para ter ideia
+ //usar window.prompt para informações
+  //Criar lista para inserir dados do paciente
+ 
+
+  //Após dados salvos no local storage e função executada, exibir dados na aba de agendamento

@@ -1,27 +1,125 @@
 const admin = {
-    user: "admin",
-    password: "vidaplus2026"
-}
-const formAdm = document.querySelector("#form-adm")
+  user: "admin",
+  password: "vidaplus2026",
+};
+const formAdm = document.querySelector("#form-adm");
 const adminArea = document.querySelector("#admin-area");
 const passwordArea = document.querySelector("#password-area");
 const btnLogin = document.querySelector("#login-button");
+const costs = document.querySelector("#costs");
 
 btnLogin.addEventListener("click", () => {
-    //Se o usuário admin e senha digitados forem iguais aos do objeto admin, exibe "Acesso concedido!", senão exibe "Acesso negado!"
-    if (admin.user === adminArea.value && admin.password === passwordArea.value) {
-        alert("Acesso concedido!");
-        function redirectToAdmDashboard() {
-            formAdm.remove()
-            //Criar os demais elementos (médicos, dashboard, finanças)
-        }
+  //Se o usuário admin e senha digitados forem iguais aos do objeto admin, exibe "Acesso concedido!", senão exibe "Acesso negado!"
+  if (admin.user === adminArea.value && admin.password === passwordArea.value) {
+    alert("Acesso concedido!");
+    function redirectToAdmDashboard() {
+      formAdm.remove();
+      //Criar os demais elementos (médicos, dashboard, finanças)
+      costs.innerHTML = `
+        <table border = "1">
+        <tr>
+            <th>Nº</th>
+            <th>Item</th>
+            <th>Quantidade</th>
+            <th>Preço Unitário (R$)</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Luvas descartáveis (caixa)</td>
+            <td>100 un</td>
+            <td>35,00</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Máscaras cirúrgicas</td>
+            <td>50 un</td>
+            <td>20,00</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Termômetro digital</td>
+            <td>1 un</td>
+            <td>48,00</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Esfigmomanômetro</td>
+            <td>1 un</td>
+            <td>120,00</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Oxímetro de pulso</td>
+            <td>1 un</td>
+            <td>90,00</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Gel para ultrassom</td>
+            <td>1 L</td>
+            <td>25,00</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Álcool 70%</td>
+            <td>1 L</td>
+            <td>12,00</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Gaze estéril</td>
+            <td>100 un</td>
+            <td>18,00</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Seringas 5ml</td>
+            <td>50 un</td>
+            <td>28,00</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Estetoscópio</td>
+            <td>1 un</td>
+            <td>150,00</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>Curativos adesivos</td>
+            <td>50 un</td>
+            <td>10,00</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>Algodão hidrófilo</td>
+            <td>500 g</td>
+            <td>9,00</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>Conta de água (mês)</td>
+            <td>-</td>
+            <td>450,00</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>Conta de luz (mês)</td>
+            <td>-</td>
+            <td>700,00</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>Internet - Plano Corporativo Mensal</td>
+            <td>-</td>
+            <td>250,00</td>
+        </tr>
+    </table>
 
-    redirectToAdmDashboard()    
-
-
+            `;
     }
-    else {
-        alert("Acesso negado!");
-    }
 
-})
+    redirectToAdmDashboard();
+  } else {
+    alert("Acesso negado!");
+  }
+});
