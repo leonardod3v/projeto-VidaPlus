@@ -5,6 +5,7 @@ let professionalUser = [
     contact: "(11) 98765-4321",
     code: 56902,
     password: "cardio2024",
+    birthday: "19-02-1985"
   },
 
   {
@@ -13,6 +14,8 @@ let professionalUser = [
     contact: "(21) 91234-5678",
     code: 78345,
     password: "ortho2025",
+    birthday: "03 de dezembro de 2000"
+
   },
 
   {
@@ -21,6 +24,7 @@ let professionalUser = [
     contact: "(31) 99876-5432",
     code: 34567,
     password: "derma0788",
+    birthday: "11/02/1992"
   },
 
   {
@@ -29,6 +33,7 @@ let professionalUser = [
     contact: "(41) 93456-7890",
     code: 12345,
     password: "pediatria",
+    birthday: "21/07/1968"
   },
 ];
 
@@ -41,6 +46,7 @@ const btn = document.querySelector("#btn")
 const h4 = document.querySelector("h4")
 const formBox = document.querySelector("#data-box")
 const infos = document.querySelector("#infos")
+const logout = document.querySelector("#logout")
 
 loginButton.addEventListener("click", function (event) {
   event.preventDefault();
@@ -109,6 +115,7 @@ loginButton.addEventListener("click", function (event) {
    appointments.style.display = 'block' 
    h4.style.display = 'block'
    btn.style.display = 'block'
+   logout.style.display = 'block'
       
   redirectToMedicArea();
 
@@ -127,45 +134,35 @@ btn.addEventListener("click", () => {
     const inputName = document.querySelector("#input-name").value
     const inputSituation = document.querySelector("#input-situation").value
     const inputVisit = document.querySelector("#input-visit").value
+    const inputHour = document.querySelector("#input-hour").value
   
     infos.innerHTML = `
-      <p>${inputName}</p>
-      <p>${inputSituation}</p>
-      <p>${inputVisit}</p>
+      <p>Paciente: ${inputName}</p>
+      <p>Problema relatado: ${inputSituation}</p>
+      <p>Dia da consulta: ${inputVisit}</p>
+      <p>Horário: ${inputHour}</p>
+
     `
 
     if (inputName == '' || inputSituation == '' || inputVisit == '') {
-        alert("Preencha os dados!")
+        alert("Preencha todos os dados!")
     }
     else {
       alert("Agendamento salvo!")
     }
 
-  /* formBox.style.display = 'grid'
-      const patientName = prompt("Informe o nome do paciente: ")
-      const day = prompt("Informe o dia para agendamento: ")
-      const hour = prompt("Informe o horário: ")
-      alert("Agendamento concluído!")
-
-      infos.innerHTML = `
-        <ul type="none">
-          <li>${patientName}</li>
-          <li>${day}</li>
-          <li>${hour}h</li>
-        </ul>
-      ` */
   })
+
   //VERIFICAR A LÓGICA NOVAMENTE, NÃO FUNCIONANDO 100% 
   deleteInfo.addEventListener('click', () => {
       infos.innerHTML = 'Nenhum agendamento!'
-      alert("Agendamento deletado")
+      alert("Agendamento deletado.")
   })
 
- 
- //Criar um input para colocar as informações (?)
- //Checar to-do list para ter ideia
- //usar window.prompt para informações
-  //Criar lista para inserir dados do paciente
- 
+  
+  logout.addEventListener("click", () => {
+      alert("Saiu do sistema.")
+      window.close()
+  })  
 
-  //Após dados salvos no local storage e função executada, exibir dados na aba de agendamento
+

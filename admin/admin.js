@@ -16,6 +16,7 @@ btnLogin.addEventListener("click", () => {
       formAdm.remove();
       //Criar os demais elementos (médicos, dashboard, finanças)
       costs.innerHTML = `
+        <h3>Gastos fixos mensais</h3>
         <table border = "1">
         <tr>
             <th>Nº</th>
@@ -116,9 +117,49 @@ btnLogin.addEventListener("click", () => {
     </table>
 
             `;
-    }
+    
+    const medicInfo = document.querySelector("#medic-info");
+    medicInfo.innerHTML = '<h3>Informações dos Profissionais de Saúde Cadastrados:</h3>';
 
-    redirectToAdmDashboard();
+    // Puxa os dados dos profissionais do localStorage
+    const storedUsers = JSON.parse(localStorage.getItem("professionalUser")) || [];
+
+    // Cria uma repetição para exibir o cartão de informações de cada profissional
+    storedUsers.forEach(user => {
+    const userDiv = document.createElement("div"); //Cria a div para o cartão do médico
+    userDiv.classList.add("user-card"); //Adiciona a classe CSS para estilizar o cartão
+    // Insere o conteúdo do cartão
+    userDiv.innerHTML = `
+        <p><strong>Nome:</strong> ${user.name}</p>
+        <p><strong>Profissão:</strong> ${user.profession}</p>
+        <p><strong>Contato:</strong> ${user.contact}</p>
+        <p><strong>Código:</strong> ${user.code}</p>
+        <p><strong>Data de nascimento:</strong> ${user.birthday}</p>
+        <br><hr>
+
+    `;
+    // Adiciona o cartão ao contêiner principal
+    medicInfo.appendChild(userDiv);
+});
+        
+            
+    alert("Bem-vindo à área administrativa!");
+
+    
+const logoutButton = document.querySelector("#logout");
+logoutButton.addEventListener("click", function() {
+    alert("Você saiu da área administrativa.");
+    // Fecha a janela atual
+    window.close();
+});
+
+
+}
+
+
+
+
+  redirectToAdmDashboard();
   } else {
     alert("Acesso negado!");
   }

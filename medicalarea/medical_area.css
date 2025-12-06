@@ -38,8 +38,12 @@ div#patients {
     width: 25rem;
 }
 
-table, h4, #data-box, #appointments {
+table, h4, #data-box, #appointments, #logout {
     display: none;
+}
+
+h4 {
+    margin-bottom: 1rem;
 }
 
 div#data-box {
@@ -83,4 +87,14 @@ button {
 
 button#btn {
     display: none;
+}
+
+#logout {
+    background: tomato;
+    color: #fff;
+    width: 5rem;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 2rem 0;
+    cursor: pointer;
 }
