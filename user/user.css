@@ -78,3 +78,13 @@ button:hover {
     justify-content: center;
 
 }
+
+button#logout {
+    background: tomato;
+    color: #fff;
+    width: 5rem;
+    padding: 1rem;
+    border-radius: 5px;
+    margin: 2rem 0;
+    cursor: pointer;
+}

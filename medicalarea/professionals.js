@@ -14,7 +14,7 @@ let professionalUser = [
     contact: "(21) 91234-5678",
     code: 78345,
     password: "ortho2025",
-    birthday: "03 de dezembro de 2000"
+    birthday: "03-12-2000"
 
   },
 
@@ -24,7 +24,7 @@ let professionalUser = [
     contact: "(31) 99876-5432",
     code: 34567,
     password: "derma0788",
-    birthday: "11/02/1992"
+    birthday: "11-02-1992"
   },
 
   {
@@ -33,7 +33,7 @@ let professionalUser = [
     contact: "(41) 93456-7890",
     code: 12345,
     password: "pediatria",
-    birthday: "21/07/1968"
+    birthday: "21-07-1968"
   },
 ];
 

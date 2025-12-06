@@ -18,3 +18,9 @@ const checkInfo = document.querySelector("#check-info")
 checkInfo.addEventListener('click', () => {
   alert("Sem informações no histórico!")
 })
+
+const logout = document.querySelector("#logout")
+logout.addEventListener("click", () =>{
+  window.close()
+  alert("Saiu do sistema.")
+})

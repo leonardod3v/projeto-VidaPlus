@@ -7,6 +7,7 @@ const adminArea = document.querySelector("#admin-area");
 const passwordArea = document.querySelector("#password-area");
 const btnLogin = document.querySelector("#login-button");
 const costs = document.querySelector("#costs");
+const logoutButton = document.querySelector("#logout");
 
 btnLogin.addEventListener("click", () => {
   //Se o usuário admin e senha digitados forem iguais aos do objeto admin, exibe "Acesso concedido!", senão exibe "Acesso negado!"
@@ -140,24 +141,17 @@ btnLogin.addEventListener("click", () => {
     `;
     // Adiciona o cartão ao contêiner principal
     medicInfo.appendChild(userDiv);
-});
-        
-            
-    alert("Bem-vindo à área administrativa!");
 
-    
-const logoutButton = document.querySelector("#logout");
+    logoutButton.style.display = 'block'
+});
+
 logoutButton.addEventListener("click", function() {
     alert("Você saiu da área administrativa.");
     // Fecha a janela atual
     window.close();
 });
 
-
 }
-
-
-
 
   redirectToAdmDashboard();
   } else {
