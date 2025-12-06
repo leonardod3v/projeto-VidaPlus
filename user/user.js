@@ -8,24 +8,11 @@ if (dados) {
     <p><strong>Nome:</strong> ${dados.nome}</p><br>
     <p><strong>Email:</strong> ${dados.email}</p><br>
     <p><strong>CPF:</strong> ${dados.cpf}</p><br>
-    
-    
-
   `;
-} else {
+} 
+else {
   document.getElementById("dadosCliente").innerHTML = "<p>Nenhum dado encontrado.</p>";
 }
-
-const setVisit = document.querySelector("#set-visit")
-setVisit.addEventListener('click', () => {
-    
-      const inputData = document.createElement('input')
-      const inputTime = document.createElement('input')
-      inputData.type = 'date'
-      inputTime.type = 'time'
-      document.body.appendChild(inputData);
-      document.body.appendChild(inputTime);
-  })
 
 const checkInfo = document.querySelector("#check-info")
 checkInfo.addEventListener('click', () => {

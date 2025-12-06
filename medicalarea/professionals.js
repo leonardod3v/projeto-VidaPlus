@@ -158,7 +158,7 @@ btn.addEventListener("click", () => {
   //VERIFICAR A LÓGICA NOVAMENTE, NÃO FUNCIONANDO 100% 
   deleteInfo.addEventListener('click', () => {
       infos.innerHTML = 'Nenhum agendamento!'
-
+      alert("Agendamento deletado")
   })
 
  
