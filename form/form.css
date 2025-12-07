@@ -68,3 +68,42 @@ button:hover {
     background-color: rgb(35, 205, 205);
     font-weight: bold;
 }
+
+@media screen and (max-width: 400px) {
+
+    header {
+        height: 120px;
+        max-width: 100%;
+    }
+
+    main {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 18px;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+    
+    form {
+        align-items: center;
+        max-width: 90%;
+    }
+
+    input, button {
+        max-width: 80%;
+    }
+
+    form#formLogin {
+        height: 200px;
+    }
+
+}

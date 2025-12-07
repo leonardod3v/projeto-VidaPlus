@@ -98,3 +98,72 @@ button#btn {
     margin: 2rem 0;
     cursor: pointer;
 }
+
+@media screen and (max-width: 675px) {
+
+    header {
+        height: 120px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    h2 {
+        font-size: 15px;
+    }
+
+    div#patients {
+        width: 300px;
+    }
+
+    div#data-box input {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        margin-top: 1rem;
+    }
+}
+
+@media screen and (max-width: 465px) {
+
+    header {
+        height: 120px;
+        max-width: 90%;
+        text-align: left;
+        padding: 1.25rem;
+    }
+
+
+    h1 {
+        font-size: 18px;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+
+    div#patients {
+        width: 220px;
+        height: 200px;
+        margin-bottom: 5rem;
+    }
+
+    table th, table td {
+        padding: 0.25rem;
+        text-align: center;
+    }
+
+
+    div#data-box input {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        margin-top: 1rem;
+    }
+}

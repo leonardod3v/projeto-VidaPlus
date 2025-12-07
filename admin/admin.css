@@ -55,6 +55,10 @@ div#medic-info h3 {
     margin-bottom: 1rem;
 }
 
+a {
+    display: none;
+}
+
 button#logout {
     display: none;
     background: tomato;
@@ -64,5 +68,18 @@ button#logout {
     border-radius: 5px;
     margin: 2rem 0;
     cursor: pointer;
+}
+
+@media screen and (max-width: 400px) {
+    
+
+    tr, th {
+        font-size: 12px;
+    }
+
+    div#medic-info {
+    margin: 1rem 0;
+    width: 10rem;
+}
 }
 

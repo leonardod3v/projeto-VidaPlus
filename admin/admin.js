@@ -1,7 +1,10 @@
+// Chave e valor para login do usuário administrador
 const admin = {
   user: "admin",
   password: "vidaplus2026",
 };
+
+// Trazendo os elementos do HTML para variáveis no JS
 const formAdm = document.querySelector("#form-adm");
 const adminArea = document.querySelector("#admin-area");
 const passwordArea = document.querySelector("#password-area");
@@ -63,8 +66,8 @@ btnLogin.addEventListener("click", () => {
         </tr>
         <tr>
             <td>7</td>
-            <td>Álcool 70%</td>
-            <td>1 L</td>
+            <td>Álcool 70% (1l)</td>
+            <td>10 un </td>
             <td>12,00</td>
         </tr>
         <tr>
@@ -93,8 +96,8 @@ btnLogin.addEventListener("click", () => {
         </tr>
         <tr>
             <td>12</td>
-            <td>Algodão hidrófilo</td>
-            <td>500 g</td>
+            <td>Algodão hidrófilo 500g</td>
+            <td>200 un</td>
             <td>9,00</td>
         </tr>
         <tr>
@@ -114,6 +117,12 @@ btnLogin.addEventListener("click", () => {
             <td>Internet - Plano Corporativo Mensal</td>
             <td>-</td>
             <td>250,00</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td><strong>Total (R$)</strong></td>
+            <td>-</td>
+            <td><strong>11.953</strong></td>
         </tr>
     </table>
 
@@ -141,10 +150,10 @@ btnLogin.addEventListener("click", () => {
     `;
     // Adiciona o cartão ao contêiner principal
     medicInfo.appendChild(userDiv);
-
+    
     logoutButton.style.display = 'block'
 });
-
+// Faz o logout do usuário
 logoutButton.addEventListener("click", function() {
     alert("Você saiu da área administrativa.");
     // Fecha a janela atual
@@ -158,3 +167,21 @@ logoutButton.addEventListener("click", function() {
     alert("Acesso negado!");
   }
 });
+
+//DELETAR CADASTRO DE MÉDICO
+
+//Criar um botão ao lado dos dados de cada médico
+//Criar elemento do mesmo botão dentro de uma variável no documento JavaScript
+//Atribuir uma função deleteEmployeeData() deletar cadastro
+//Solicitar confirmação do administrador, exigindo a senha de login
+//Se senha estiver errada, exibir mensagem para digitar a senha novamente
+//Se senha estiver OK, deletar dados e exibir mensagem de confirmação da exclusão
+
+//EDITAR CADASTRO DE MÉDICO
+////Criar um botão ao lado dos dados de cada médico
+//Criar elemento do mesmo botão dentro de uma variável no documento JavaScript
+//Atribuir uma função editEmployeeData() para alterar cadastro
+//Solicitar confirmação do administrador, exigindo a senha de login
+//Se senha estiver errada, exibir mensagem para digitar a senha novamente
+//Se senha estiver OK, edita os dados necessários
+//Confirmar a alteração e exibir mensagem de dados alterados com sucesso

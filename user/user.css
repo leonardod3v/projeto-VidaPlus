@@ -88,3 +88,28 @@ button#logout {
     margin: 2rem 0;
     cursor: pointer;
 }
+
+@media screen and (max-width: 500px) {
+
+    header {
+        height: 120px;
+        max-width: 100%;
+        text-align: left;
+        padding: 1.25rem;
+    }
+
+
+    h1 {
+        font-size: 18px;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
+
+    h3 {
+        font-size: 15px;
+    }
+    
+}

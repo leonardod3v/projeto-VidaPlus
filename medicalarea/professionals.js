@@ -153,7 +153,7 @@ btn.addEventListener("click", () => {
 
   })
 
-  //VERIFICAR A LÓGICA NOVAMENTE, NÃO FUNCIONANDO 100% 
+  //Apagar agendamento do paciente
   deleteInfo.addEventListener('click', () => {
       infos.innerHTML = 'Nenhum agendamento!'
       alert("Agendamento deletado.")
@@ -163,6 +163,16 @@ btn.addEventListener("click", () => {
   logout.addEventListener("click", () => {
       alert("Saiu do sistema.")
       window.close()
-  })  
+  })
+  
+  //ADICIONAR DOCUMENTOS MÉDICOS PARA PACIENTES CADASTRADOS
+  //Criar opção para médicos inserirem documentos, atestados, exames ou relatórios para paciente
+  //Inserir uma lista flutuante com os pacientes cadastrados
+  //Criar variáveis para puxar os elementos HTML no documento JavaScript
+  //Criar função addDocument() no documento JavaScript
+  //Fazer upload de arquivo
+  //Caso confirmar, exibir mensagem de upload bem sucedido
+  //Caso declinar, exibir mensagem de nenhum arquivo inserido
+  //Caso dê erro, informar que o arquivo não foi carregado para o sistema e verificar novamente
 
 
