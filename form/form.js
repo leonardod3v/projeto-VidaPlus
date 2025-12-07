@@ -16,10 +16,19 @@ document.getElementById("formCadastro").addEventListener("submit", function (e) 
     senha: senha
   };
 
+  if (cpf.length != 11) {
+    alert("Insira o número correto de caracteres no CPF!")
+  }
+
+  if (cpf.length === 11) {
+    alert("Cadastro realizado com sucesso!");
+  }
+  
   // Armazena dados no LocalStorage
   localStorage.setItem("clienteCadastro", JSON.stringify(cliente));
 
-  alert("Cadastro realizado com sucesso!");
+   
+  
   // Limpa o formulário
   document.getElementById("formCadastro").reset();
 });
@@ -35,6 +44,8 @@ document.getElementById("formLogin").addEventListener("submit", function (e) {
   const senhaLogin = document.getElementById("loginSenha").value;
 
   const cliente = JSON.parse(localStorage.getItem("clienteCadastro"));
+
+
 
   if (!cliente) {
     alert("Nenhum cliente cadastrado!");
